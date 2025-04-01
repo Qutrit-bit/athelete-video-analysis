@@ -69,5 +69,6 @@ async def upload_video(file: UploadFile = File(...)):
     cloudinary_url = upload_to_cloudinary(output_path)
     
     os.remove(input_path)
+    os.remove(output_path)
     
     return {"cloudinary_url": cloudinary_url}
